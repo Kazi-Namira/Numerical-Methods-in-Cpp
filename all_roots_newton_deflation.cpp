@@ -64,7 +64,6 @@ int main()
     cout << "Correct to 3 decimal places" << endl
          << endl;
 
-    // Find first root
     double x0 = 1.5;
     int iter1;
     double root1 = newtonMethod(x0, tolerance, iter1);
@@ -76,8 +75,6 @@ int main()
         cout << "First root found: " << fixed << setprecision(6)
              << root1 << " (after " << iter1 << " iterations)" << endl;
 
-        // Deflate polynomial using synthetic division
-        // Original: x³ + 0x² - 6x + 4
         double a3 = 1, a2 = 0, a1 = -6, a0 = 4;
 
         // Synthetic division with root1
@@ -90,11 +87,9 @@ int main()
         cout << "Remainder: " << remainder << " (should be ~0)" << endl
              << endl;
 
-        // Solve quadratic: b*x² + c*x + d = 0
         vector<double> remainingRoots;
         solveQuadratic(b, c, d, remainingRoots);
 
-        // Add remaining roots
         for (double root : remainingRoots)
         {
             roots.push_back(root);
@@ -102,7 +97,6 @@ int main()
         }
     }
 
-    // Sort roots
     sort(roots.begin(), roots.end());
 
     cout << "\nAll roots (sorted):" << endl;
@@ -117,7 +111,6 @@ int main()
             cout << " (found by quadratic formula)" << endl;
     }
 
-    // Verification
     cout << "\nVerification (plugging back into original equation):" << endl;
     for (int i = 0; i < roots.size(); i++)
     {
