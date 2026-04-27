@@ -9,13 +9,11 @@ int main()
 
     double values[] = {1, 8, 27, 64, 125};
 
-    // Initialize y
     for (int i = 0; i < n; i++)
     {
         y[i][0] = values[i];
     }
 
-    // Forward difference table
     for (int j = 1; j < n; j++)
     {
         for (int i = 0; i < n - j; i++)
