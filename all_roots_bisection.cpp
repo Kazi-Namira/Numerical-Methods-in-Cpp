@@ -36,7 +36,6 @@ double bisection(double a, double b, double tolerance, int &iterations)
 
 int main()
 {
-    // Identify intervals containing roots
     vector<pair<double, double>> intervals = {{-3, -2}, {0, 1}, {1, 2}};
     double tolerance = 0.0005; // For 3 decimal places
     vector<double> roots;
